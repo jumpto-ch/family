@@ -1,0 +1,16 @@
+<odoo>
+  <data>
+    <record id="view_l10n_cu_calendar_event_calendar" model="ir.ui.view">
+        <field name="name">calendar.event.calendar</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_calendar"/>
+        <field name="arch" type="xml">
+            <data>
+                   <field name="partner_ids" position="replace" >
+                        <field name="partner_ids"/>
+                    </field>
+            </data>
+        </field>
+    </record>
+  </data>
+</odoo>
