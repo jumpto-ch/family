@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="family_activity_creation_view_wizard_form" model="ir.ui.view">
+        <field name="name">Event creation wizard</field>
+        <field name="model">family.activity.event.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Create the event">
+                <sheet>
+                    <field name="datetime" widget="datetime"/>
+                </sheet>
+                <footer>
+                    <button string='Create the event' type='object'
+                            name='create_event'
+                            class='btn-primary'/>
+                    <button string='Cancel' class='btn-default' special='cancel'/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
