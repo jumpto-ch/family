@@ -26,6 +26,7 @@ class Partner(models.Model):
         for partner in self:
             partner.is_company = partner.is_family = partner.company_type == 'family'
 
+    @api.onchange('company_type')
     def onchange_company_type(self):
         if self.company_type == 'company':
             self.is_company = True
