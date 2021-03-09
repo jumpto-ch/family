@@ -8,7 +8,9 @@ class FamilyActivity(models.Model):
     _description = 'Manage an activity for a family'
 
     name = fields.Char()
+    description = fields.Html()
     employee_ids = fields.Many2many('hr.employee')
+    event_ids = fields.Many2one('resource.calendar')
 
     def action_create_event(self):
         view_id = self.env.ref('family_activity.family_activity_creation_view_wizard_form').id

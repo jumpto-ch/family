@@ -26,6 +26,6 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem name="Activity" id="family_activity_menu" parent="hr.menu_hr_root" action="family_activity_action"/>
+        <menuitem name="Activity" id="family_activity_menu" parent="calendar.mail_menu_calendar" action="family_activity_action"/>
     </data>
 </odoo>

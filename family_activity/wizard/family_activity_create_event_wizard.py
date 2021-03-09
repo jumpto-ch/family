@@ -11,4 +11,5 @@ class FamilyActivityEvent(models.TransientModel):
 
     def create_event(self):
         context = self._context.copy()
+
         return context
