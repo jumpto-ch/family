@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="family_accounting_expense_form" model="ir.ui.view">
+        <field name="model">hr.expense</field>
+        <field name="inherit_id" ref="hr_expense_journal.hr_expense_form_view_inherit"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="/form/sheet" position="replace">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_get_attachment_view"
+                                class="oe_stat_button"
+                                icon="fa-file-text-o"
+                                type="object">
+                            <field name="attachment_number" widget="statinfo"
+                                   string="Documents"
+                                   options="{'reload_on_button': true}"/>
+                        </button>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="is_editable" invisible="1"/>
+                            <field name="is_ref_editable" invisible="1"/>
+                            <field name="date"/>
+                            <field name="vendor_id"
+                                   domain="[('is_company', '=', 'true')]"/>
+                            <field name="product_id" required="1"
+                                   context="{'default_can_be_expensed': 1, 'tree_view_ref': 'hr_expense.product_product_expense_tree_view'}"
+                                   widget="many2one_barcode"
+                                   options="{'no_create_edit': True}"
+                            />
+                            <field name="remarks"/>
+                            <field name="name" groups="base.group_no_one"/>
+                            <field name="product_uom_category_id" invisible="1"/>
+                            <field name="payment_mode" invisible="1"/>
+                            <field name="payment_type_id" required="1"
+                                   attrs="{'invisible': [('payment_mode', '!=', 'company_account')]}"
+                                   domain="['|',('type', '=', 'bank'),('type', '=', 'cash')]"/>
+                            <field name="unit_amount" required="1" widget="monetary"
+                                   options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+
+                        </group>
+                        <group>
+                            <field name="account_id" options="{'no_create': True}"
+                                   domain="[('internal_type', '=', 'other'), ('company_id', '=', company_id)]"
+                                   groups="account.group_account_user"
+                                   attrs="{'readonly': [('is_editable', '=', False)]}"
+                                   context="{'default_company_id': company_id}"/>
+                            <field name="employee_id"
+                                   groups="hr_expense.group_hr_expense_team_approver"
+                                   context="{'default_company_id': company_id}"/>
+                            <field name="sheet_id" invisible="1"/>
+                            <field name="currency_id"
+                                   groups="base.group_multi_currency"/>
+                            <field name="analytic_account_id"
+                                   domain="['|', ('company_id', '=', company_id), ('company_id', '=', False)]"
+                                   groups="analytic.group_analytic_accounting"
+                                   attrs="{'readonly': [('is_editable', '=', False)]}"/>
+                            <field name="analytic_tag_ids" widget="many2many_tags"
+                                   groups="analytic.group_analytic_tags"
+                                   attrs="{'readonly': [('is_editable', '=', False)]}"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+
+                </sheet>
+            </xpath>
+        </field>
+    </record>
+</odoo>
