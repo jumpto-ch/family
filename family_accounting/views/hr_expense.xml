@@ -25,9 +25,9 @@
                             <field name="vendor_id"
                                    domain="[('is_company', '=', 'true')]"/>
                             <field name="product_id" required="1"
+                                   options="{'no_create': True}"
                                    context="{'default_can_be_expensed': 1, 'tree_view_ref': 'hr_expense.product_product_expense_tree_view'}"
                                    widget="many2one_barcode"
-                                   options="{'no_create_edit': True}"
                             />
                             <field name="remarks"/>
                             <field name="name" groups="base.group_no_one"/>
