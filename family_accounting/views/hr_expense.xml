@@ -22,13 +22,14 @@
                             <field name="is_editable" invisible="1"/>
                             <field name="is_ref_editable" invisible="1"/>
                             <field name="date"/>
-                            <field name="vendor_id"
-                                   domain="[('is_company', '=', 'true')]"/>
                             <field name="product_id" required="1"
                                    options="{'no_create': True}"
                                    context="{'default_can_be_expensed': 1, 'tree_view_ref': 'hr_expense.product_product_expense_tree_view'}"
                                    widget="many2one_barcode"
                             />
+                            <field name="vendor_id"
+                                   domain="[('is_company','=','true'),('is_family','!=','true')]"
+                                   context="{'default_company_type': 'company'}"/>
                             <field name="remarks"/>
                             <field name="name" groups="base.group_no_one"/>
                             <field name="product_uom_category_id" invisible="1"/>
