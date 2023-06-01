@@ -1,0 +1,19 @@
+<odoo>
+    <record id="account_journal_dashboard_simplebills_kanban_view" model="ir.ui.view">
+        <field name="name">account.journal.dashboard.simplebills.kanban</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.account_journal_dashboard_kanban_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//t[@t-if=&quot;journal_type == 'purchase'&quot;]/t/button[@journal_type='purchase']" position="after">
+                <button type="object" name="action_create_new_entry" class="btn btn-primary oe_kanban_action_button" journal_type="purchase" groups="account.group_account_invoice">
+                    <span>New Entry</span>
+                </button>
+            </xpath>
+            <xpath expr="//t[@t-if=&quot;journal_type == 'purchase'&quot;]/t[2]/button[@journal_type='purchase']" position="after">
+                <button type="object" name="action_create_new_entry" class="btn btn-primary oe_kanban_action_button" journal_type="purchase" groups="account.group_account_invoice">
+                    <span>New Entry</span>
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>
