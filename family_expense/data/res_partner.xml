@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <!--  Create default vendor  -->
+        <record id="family_expense.undefined_res_partner" model="res.partner">
+            <field name="company_type">company</field>
+            <field name="name">Undefined</field>
+        </record>
+    </data>
+</odoo>
