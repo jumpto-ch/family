@@ -16,12 +16,12 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: family_expense
-#: model_terms:ir.ui.view,arch_db:family_expense.account_move_simple_create_wizard_form_view
+#: model_terms:ir.ui.view,arch_db:family_expense.account_move_quick_expense_wizard_form_view
 msgid "<span>New expense</span>"
 msgstr "<span>Nouvelle dépense</span>"
 
 #. module: family_expense
-#: model_terms:ir.ui.view,arch_db:family_expense.account_journal_dashboard_simplebills_kanban_view
+#: model_terms:ir.ui.view,arch_db:family_expense.account_journal_dashboard_quick_expense_kanban_view
 msgid "<span>Quick expense</span>"
 msgstr "<span>Dépense rapide<span>"
 
@@ -31,12 +31,12 @@ msgid "Account"
 msgstr "Compte"
 
 #. module: family_expense
-#: model_terms:ir.ui.view,arch_db:family_expense.account_move_simple_create_wizard_form_view
+#: model_terms:ir.ui.view,arch_db:family_expense.account_move_quick_expense_wizard_form_view
 msgid "Account Entry"
 msgstr "Entrée de Compte"
 
 #. module: family_expense
-#: model_terms:ir.ui.view,arch_db:family_expense.account_move_simple_create_wizard_form_view
+#: model_terms:ir.ui.view,arch_db:family_expense.account_move_quick_expense_wizard_form_view
 msgid "Cancel"
 msgstr "Annuler"
 
@@ -107,7 +107,7 @@ msgid "Payment method"
 msgstr "Mode de paiement"
 
 #. module: family_expense
-#: model_terms:ir.ui.view,arch_db:family_expense.account_move_simple_create_wizard_form_view
+#: model_terms:ir.ui.view,arch_db:family_expense.account_move_quick_expense_wizard_form_view
 msgid "Post"
 msgstr "Valider"
 

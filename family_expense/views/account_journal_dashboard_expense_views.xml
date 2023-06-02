@@ -6,7 +6,7 @@
         <field name="arch" type="xml">
             <xpath expr="//t[@t-if=&quot;journal_type == 'purchase'&quot;]/field" position="after">
                 <button type="object" name="action_create_new_entry" class="btn btn-primary oe_kanban_action_button" journal_type="purchase" groups="account.group_account_invoice">
-                    <span>Quick expense</span>
+                   Quick expense
                 </button>
             </xpath>
         </field>
