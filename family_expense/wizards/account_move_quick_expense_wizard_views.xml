@@ -15,12 +15,12 @@
                                context="{'show_address': 1, 'default_is_company': True, 'show_vat': True}"
                                domain="[('type', '!=', 'private')]"
                                options='{"always_reload": True, "no_quick_create": True}'/>
-                        <field name="account_id"/>
-                        <field name="payment_method"/>
+                        <field name="account_id" options="{'no_create': True}"/>
 
                         <field name="price"/>
                         <field name="description"/>
-                        <field name="invoice_date" options="{'datepicker': {'warn_future': true}}"/>
+                        <field name="invoice_date" widget="date"/>
+                        <field name="payment_method"/>
                     </group>
                 </sheet>
                 <footer>

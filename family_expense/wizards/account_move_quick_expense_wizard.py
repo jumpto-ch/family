@@ -21,7 +21,7 @@ class QuickExpenseWizard(models.TransientModel):
         domain="[('type', 'in', ('bank','cash'))]")
 
     price = fields.Char(string='Price', required=True)
-    invoice_date = fields.Date(string='Date', default=fields.Date.context_today)
+    invoice_date = fields.Date(string='Date')
 
     @api.constrains('price')
     def _check_price(self):
