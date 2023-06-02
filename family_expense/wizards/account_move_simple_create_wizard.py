@@ -6,14 +6,19 @@ class AccountMoveSimpleCreateWizard(models.TransientModel):
     _name = 'account.move.simple.create.wizard'
     _description = 'Create an account move only with required field'
 
-    partner_id = fields.Many2one('res.partner', string='Partner')
-    account_id = fields.Many2one('account.account')
+    partner_id = fields.Many2one('res.partner', string='Vendor')
+    account_move_line_name = fields.Char(string='Description')
+    account_id = fields.Many2one('account.account',
+                                 domain="['|', '|', "
+                                        "('code', '=like', '4%'), "
+                                        "('code', '=like', '5%'), "
+                                        "('code', '=like', '6%'),]")
     account_payment_journal_id = fields.Many2one(
         comodel_name='account.journal',
-        string='Journal',
+        string='Payment',
         domain="[('type', 'in', ('bank','cash'))]")
 
-    price_unit = fields.Float(string='Unit Price', required=True, digits='Product Price')
+    price_unit = fields.Float(string='Price', required=True, digits='Product Price')
     invoice_date = fields.Date(string='Invoice/Bill Date', default=fields.Date.context_today)
 
     def action_post(self):
@@ -24,6 +29,7 @@ class AccountMoveSimpleCreateWizard(models.TransientModel):
             'invoice_date': self.invoice_date,
             'date': self.invoice_date,
             'invoice_line_ids': [(0, 0, {
+                'name': self.account_move_line_name,
                 'account_id': self.account_id,
                 'price_unit': self.price_unit
             })]
