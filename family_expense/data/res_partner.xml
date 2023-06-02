@@ -1,0 +1,7 @@
+<odoo>
+    <data>
+        <record id="family_simple_bill.default_user_res_partner" model="res.partner">
+            <field name="lang">fr_CH</field>
+        </record>
+    </data>
+</odoo>
