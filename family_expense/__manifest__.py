@@ -10,6 +10,7 @@
         This module add a button to the accounting dashboard view to speed and simplify the entry of expense
         """,
 
+    "license": "AGPL-3",
     'author': "JumpTo",
     'website': "http://jumpto.ch",
 
@@ -25,6 +26,6 @@
         'data/res_partner.xml',
         'security/ir.model.access.csv',
         'views/account_journal_dashboard_expense_views.xml',
-        'wizards/account_move_quick_acces_wizard_views.xml'
+        'wizards/account_move_quick_expense_wizard_views.xml'
     ],
 }
