@@ -19,6 +19,7 @@
                         <field name="account_payment_journal_id"/>
 
                         <field name="price_unit"/>
+                        <field name="description"/>
                         <field name="invoice_date" options="{'datepicker': {'warn_future': true}}"/>
                     </group>
                 </sheet>

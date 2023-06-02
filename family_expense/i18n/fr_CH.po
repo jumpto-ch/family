@@ -22,8 +22,8 @@ msgstr "<span>Brouillon</span>"
 
 #. module: family_expense
 #: model_terms:ir.ui.view,arch_db:family_expense.account_journal_dashboard_simplebills_kanban_view
-msgid "<span>New Entry</span>"
-msgstr "<span>Nouvelle Entrée<span>"
+msgid "<span>Quick expense</span>"
+msgstr "<span>Dépense rapide<span>"
 
 #. module: family_expense
 #: model:ir.model.fields,field_description:family_expense.field_account_move_simple_create_wizard__account_id

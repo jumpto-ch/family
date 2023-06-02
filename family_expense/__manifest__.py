@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "family_simplebills",
+    'name': "family_expense",
 
     'summary': """
         This module add a button to the accounting dashboard view to speed and simplify the entry of simple bills
@@ -22,8 +22,9 @@
 
     # always loaded
     'data': [
+        'data/res_partner.xml',
         'security/ir.model.access.csv',
-        'views/account_journal_dashboard_simplebills_views.xml',
+        'views/account_journal_dashboard_expense_views.xml',
         'wizards/account_move_simple_create_wizard_views.xml'
     ],
 }

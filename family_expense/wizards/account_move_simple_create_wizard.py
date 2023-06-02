@@ -7,7 +7,7 @@ class AccountMoveSimpleCreateWizard(models.TransientModel):
     _description = 'Create an account move only with required field'
 
     partner_id = fields.Many2one('res.partner', string='Vendor')
-    account_move_line_name = fields.Char(string='Description')
+    description = fields.Char(string='Description')
     account_id = fields.Many2one('account.account',
                                  domain="['|', '|', "
                                         "('code', '=like', '4%'), "
@@ -22,14 +22,15 @@ class AccountMoveSimpleCreateWizard(models.TransientModel):
     invoice_date = fields.Date(string='Invoice/Bill Date', default=fields.Date.context_today)
 
     def action_post(self):
+        partner_id = self.partner_id if self.partner_id else self.env.ref('family_expense.undefined_res_partner')
         moves = self.env['account.move'].create({
             'move_type': self.env.context.get('default_move_type'),
             'journal_id': self.env.context.get('default_journal_id'),
-            'partner_id': self.partner_id,
+            'partner_id': partner_id,
             'invoice_date': self.invoice_date,
             'date': self.invoice_date,
             'invoice_line_ids': [(0, 0, {
-                'name': self.account_move_line_name,
+                'name': self.description,
                 'account_id': self.account_id,
                 'price_unit': self.price_unit
             })]

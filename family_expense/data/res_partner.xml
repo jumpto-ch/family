@@ -1,7 +1,9 @@
 <odoo>
     <data>
-        <record id="family_simple_bill.default_user_res_partner" model="res.partner">
-            <field name="lang">fr_CH</field>
+        <!--  Create default vendor  -->
+        <record id="family_expense.undefined_res_partner" model="res.partner">
+            <field name="company_type">company</field>
+            <field name="name">Undefined</field>
         </record>
     </data>
 </odoo>
