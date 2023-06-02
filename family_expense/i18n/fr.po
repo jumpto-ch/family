@@ -17,8 +17,8 @@ msgstr ""
 
 #. module: family_expense
 #: model_terms:ir.ui.view,arch_db:family_expense.account_move_simple_create_wizard_form_view
-msgid "<span>Draft</span>"
-msgstr "<span>Brouillon</span>"
+msgid "<span>New expense</span>"
+msgstr "<span>Nouvelle dépense</span>"
 
 #. module: family_expense
 #: model_terms:ir.ui.view,arch_db:family_expense.account_journal_dashboard_simplebills_kanban_view
@@ -37,8 +37,8 @@ msgstr "Entrée de Compte"
 
 #. module: family_expense
 #: model_terms:ir.ui.view,arch_db:family_expense.account_move_simple_create_wizard_form_view
-msgid "Cancel Entry"
-msgstr "Annuler l'entrée"
+msgid "Cancel"
+msgstr "Annuler"
 
 #. module: family_expense
 #: model:ir.model,name:family_expense.model_account_move_simple_create_wizard
@@ -78,8 +78,8 @@ msgstr "ID"
 
 #. module: family_expense
 #: model:ir.model.fields,field_description:family_expense.field_account_move_simple_create_wizard__invoice_date
-msgid "Invoice/Bill Date"
-msgstr "Date de facturation"
+msgid "Date"
+msgstr "Date"
 
 #. module: family_expense
 #: model:ir.model,name:family_expense.model_account_journal
@@ -103,13 +103,13 @@ msgstr "Dernière modification le"
 
 #. module: family_expense
 #: model:ir.model.fields,field_description:family_expense.field_account_move_simple_create_wizard__account_payment_journal_id
-msgid "Payment"
-msgstr "Paiement"
+msgid "Payment method"
+msgstr "Mode de paiement"
 
 #. module: family_expense
 #: model_terms:ir.ui.view,arch_db:family_expense.account_move_simple_create_wizard_form_view
 msgid "Post"
-msgstr "Publier"
+msgstr "Valider"
 
 #. module: family_expense
 #: model:ir.model.fields,field_description:family_expense.field_account_move_simple_create_wizard__price_unit

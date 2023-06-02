@@ -1,6 +1,6 @@
 <odoo>
-    <record id="account_journal_dashboard_simplebills_kanban_view" model="ir.ui.view">
-        <field name="name">account.journal.dashboard.simplebills.kanban</field>
+    <record id="account_journal_dashboard_quick_expense_kanban_view" model="ir.ui.view">
+        <field name="name">account.journal.dashboard.quick.expense.kanban</field>
         <field name="model">account.journal</field>
         <field name="inherit_id" ref="account.account_journal_dashboard_kanban_view"/>
         <field name="arch" type="xml">

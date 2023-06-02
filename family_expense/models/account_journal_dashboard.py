@@ -20,7 +20,7 @@ class AccountJournal(models.Model):
             'name': _('Create new invoice/bill'),
             'type': 'ir.actions.act_window',
             'view_mode': 'form',
-            'res_model': 'account.move.simple.create.wizard',
+            'res_model': 'account.move.quick.expense',
             'target': 'new',
             'context': ctx,
         }
