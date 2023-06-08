@@ -20,7 +20,8 @@
                         <field name="price"/>
                         <field name="description"/>
                         <field name="invoice_date" widget="date"/>
-                        <field name="payment_method"/>
+                        <field name="is_draft"/>
+                        <field name="payment_method" attrs="{'invisible': [('is_draft', '=', True)]}"/>
                     </group>
                 </sheet>
                 <footer>

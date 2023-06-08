@@ -15,6 +15,7 @@ class QuickExpenseWizard(models.TransientModel):
                                         "('code', '=like', '4%'), "
                                         "('code', '=like', '5%'), "
                                         "('code', '=like', '6%'),]")
+    is_draft = fields.Boolean(string='Draft')
     payment_method = fields.Many2one(
         comodel_name='account.journal',
         string='Payment method',
@@ -47,14 +48,14 @@ class QuickExpenseWizard(models.TransientModel):
                 'price_unit': price
             })]
         })
-        moves.action_post()
-
-        if self.payment_method.type == 'cash':
-            payment = self.env['account.payment.register'].with_context({
-                'active_model': 'account.move',
-                'active_ids': moves.ids,
-                'dont_redirect_to_payments': True
-            }).create({
-                'journal_id': self.payment_method.id
-            })
-            payment.action_create_payments()
+        if not self.is_draft:
+            moves.action_post()
+            if self.payment_method.make_quick_payment:
+                payment = self.env['account.payment.register'].with_context({
+                    'active_model': 'account.move',
+                    'active_ids': moves.ids,
+                    'dont_redirect_to_payments': True
+                }).create({
+                    'journal_id': self.payment_method.id
+                })
+                payment.action_create_payments()
