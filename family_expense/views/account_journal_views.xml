@@ -11,4 +11,17 @@
             </xpath>
         </field>
     </record>
+
+    <record id="view_account_journal_form" model="ir.ui.view">
+        <field name="name">account.journal.form</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='advanced_settings']/group" position="inside">
+                <group string="Quick expense" attrs="{'invisible': [('type', 'not in', ('bank','cash'))]}">
+                    <field name="make_quick_payment"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
 </odoo>
