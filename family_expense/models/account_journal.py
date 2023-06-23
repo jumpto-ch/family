@@ -11,7 +11,7 @@ class AccountJournal(models.Model):
     def action_month_expense(self):
         self.ensure_one()
         now = fields.Date.today()
-        mis_report_id = self.env['mis.report.instance'].search([('date_from', '<', now), ('date_to', '>', now)], limit=1)
+        mis_report_id = self.env['mis.report.instance'].search([('date_from', '<=', now), ('date_to', '>=', now)], limit=1)
         view_id = self.env.ref("mis_builder.mis_report_instance_result_view_form")
         return {
             "type": "ir.actions.act_window",
