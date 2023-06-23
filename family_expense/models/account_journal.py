@@ -8,6 +8,20 @@ class AccountJournal(models.Model):
 
     make_quick_payment = fields.Boolean(string="Automatic payment", help="""Make automatic payment on quick expense""")
 
+    def action_month_expense(self):
+        self.ensure_one()
+        now = fields.Date.today()
+        mis_report_id = self.env['mis.report.instance'].search([('date_from', '<=', now), ('date_to', '>=', now)], limit=1)
+        view_id = self.env.ref("mis_builder.mis_report_instance_result_view_form")
+        return {
+            "type": "ir.actions.act_window",
+            "res_model": "mis.report.instance",
+            "res_id": mis_report_id[0].id,
+            "view_mode": "form",
+            "view_id": view_id.id,
+            "target": "current"
+        }
+
     def action_create_new_entry(self):
         """Special action on the dashboard view"""
         ctx = self._context.copy()

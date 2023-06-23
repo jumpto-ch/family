@@ -6,14 +6,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-09 07:47+0000\n"
-"PO-Revision-Date: 2023-06-09 07:47+0000\n"
+"POT-Creation-Date: 2023-06-23 14:02+0000\n"
+"PO-Revision-Date: 2023-06-23 14:02+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: family_expense
+#: model_terms:ir.ui.view,arch_db:family_expense.account_journal_dashboard_quick_expense_kanban_view
+msgid "<span>Expenses of the month</span>"
+msgstr "<span>Dépenses du mois</span>"
 
 #. module: family_expense
 #: model_terms:ir.ui.view,arch_db:family_expense.account_move_quick_expense_wizard_form_view
