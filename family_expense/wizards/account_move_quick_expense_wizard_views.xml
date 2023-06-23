@@ -27,7 +27,7 @@
                 <footer>
                     <button name="action_post" string="Add" class="oe_highlight"
                             type="object" data-hotkey="v"/>
-                    <button string="Cancel" name="cancel_button" class="btn-secondary" data-hotkey="w" special="cancel"/>
+                    <button string="Cancel" class="btn-secondary" data-hotkey="w" special="cancel"/>
                 </footer>
             </form>
         </field>

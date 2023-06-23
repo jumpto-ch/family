@@ -19,7 +19,7 @@
     # for the full list
     'category': 'Tools',
     'version': '15.0.1.0.0',
-    'depends': ['account'],
+    'depends': ['account', 'mis_builder'],
 
     # always loaded
     'data': [
