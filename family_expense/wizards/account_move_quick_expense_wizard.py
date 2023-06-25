@@ -11,7 +11,7 @@ class QuickExpenseWizard(models.TransientModel):
     description = fields.Char(string='Description')
     account_id = fields.Many2one('account.account',
                                  required=True,
-                                 domain="['|', '|', "
+                                 domain="['|', '|', '|' "
                                         "('code', '=like', '4%'), "
                                         "('code', '=like', '5%'), "
                                         "('code', '=like', '6%'), "
