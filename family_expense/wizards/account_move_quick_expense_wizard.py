@@ -11,7 +11,7 @@ class QuickExpenseWizard(models.TransientModel):
     description = fields.Char(string='Description')
     account_id = fields.Many2one('account.account',
                                  required=True,
-                                 domain=[('user_type_id', '=', '15')])
+                                 domain=[('user_type_id', '=', 15)])
     is_draft = fields.Boolean(string='Draft')
     payment_method = fields.Many2one(
         comodel_name='account.journal',
