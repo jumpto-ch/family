@@ -14,7 +14,8 @@ class QuickExpenseWizard(models.TransientModel):
                                  domain="['|', '|', "
                                         "('code', '=like', '4%'), "
                                         "('code', '=like', '5%'), "
-                                        "('code', '=like', '6%'),]")
+                                        "('code', '=like', '6%'), "
+                                        "('code', '=like', '7%'),]")
     is_draft = fields.Boolean(string='Draft')
     payment_method = fields.Many2one(
         comodel_name='account.journal',
