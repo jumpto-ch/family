@@ -47,6 +47,7 @@ class QuickExpenseWizard(models.TransientModel):
         })
         if not self.is_draft:
             moves.action_post()
+            moves.message_post(body=f"<p>paid by {self.payment_method.name}</p>")
             if self.payment_method.make_quick_payment:
                 payment = self.env['account.payment.register'].with_context({
                     'active_model': 'account.move',
