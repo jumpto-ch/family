@@ -51,8 +51,7 @@
             </xpath>
             <xpath expr="//t[@t-if=&quot;journal_type == 'purchase'&quot;]/a" position="before">
                 <button name="action_month_expense" type="object" class="btn btn-primary oe_kanban_action_button" groups="account.group_account_invoice">
-                    <span>Expenses of the month</span>
-
+                    <span>Expenses of the week</span>
                 </button>
             </xpath>
         </field>

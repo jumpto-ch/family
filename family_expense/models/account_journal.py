@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from datetime import timedelta
 
 from odoo import api, fields, models, _
 
@@ -10,8 +11,9 @@ class AccountJournal(models.Model):
 
     def action_month_expense(self):
         self.ensure_one()
-        first_day = fields.Date.today().replace(day=1)
-        mis_report_id = self.env['mis.report.instance'].search([('date', '=', first_day)], limit=1)
+        today = fields.Date.today()
+        last_monday = today - timedelta(today.weekday())
+        mis_report_id = self.env['mis.report.instance'].search([('date', '=', last_monday)], limit=1)
         view_id = self.env.ref("mis_builder.mis_report_instance_result_view_form")
         return {
             "type": "ir.actions.act_window",
