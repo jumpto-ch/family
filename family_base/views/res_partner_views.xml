@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="family_member_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="sms.res_partner_view_form"/>
+        <field name="arch" type="xml">
+            <field name="is_company" position="after">
+                <field name="is_family_member" invisible="True"/>
+            </field>
+            <field name="function" position="after">
+                <field name="family_member_role" attrs="{'invisible': [('is_family_member', '=', False)]}"/>
+            </field>
+        </field>
+    </record>
+</odoo>
