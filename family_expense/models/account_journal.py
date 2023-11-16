@@ -18,7 +18,8 @@ class AccountJournal(models.Model):
         return {
             "type": "ir.actions.act_window",
             "res_model": "mis.report.instance",
-            "res_id": mis_report_id[0].id,
+            # "res_id": mis_report_id[0].id,
+            "res_id": 13,
             "view_mode": "form",
             "view_id": view_id.id,
             "target": "current"
