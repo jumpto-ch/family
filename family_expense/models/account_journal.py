@@ -38,7 +38,7 @@ class AccountJournal(models.Model):
             'type': 'ir.actions.act_window',
             'view_mode': 'form',
             'res_model': 'account.move.quick.expense',
-            'target': 'new',
+            'target': 'main',
             'context': ctx,
         }
 
@@ -54,10 +54,10 @@ class AccountJournal(models.Model):
             ctx['default_move_type'] = 'entry'
             ctx['view_no_maturity'] = True
         return {
-            'name': _('Create new invoice/bill'),
+            'name': _('New cash in/out'),
             'type': 'ir.actions.act_window',
             'view_mode': 'form',
-            'res_model': 'account.move.quick.expense',
-            'target': 'new',
+            'res_model': 'account.bank.statement.in.out',
+            'target': 'current',
             'context': ctx,
         }

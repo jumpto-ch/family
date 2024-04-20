@@ -28,6 +28,7 @@
         'views/account_journal_views.xml',
         'views/account_account_views.xml',
         'views/mis_report_instance.xml',
-        'wizards/account_move_quick_expense_wizard_views.xml'
+        'wizards/account_move_quick_expense_wizard_views.xml',
+        'wizards/account_journal_in_out.xml'
     ],
 }

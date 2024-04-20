@@ -1,0 +1,24 @@
+<odoo>
+    <record id="account_bank_quick_cash_in_out_wizard_form_view" model="ir.ui.view">
+        <field name="name">account.move.quick.expense.create.wizard.form</field>
+        <field name="model">account.bank.statement.in.out</field>
+        <field name="arch" type="xml">
+            <form string="Account Entry">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <span>Cash In/Out</span>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="date" readonly="1"/>
+                        <field name="amount" widget="monetary"/>
+                        <field name="description"/>
+                    </group>
+                    <button name="action_post" string="Add" class="oe_highlight"
+                            type="object" data-hotkey="v"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

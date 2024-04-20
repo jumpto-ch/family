@@ -57,3 +57,8 @@ class QuickExpenseWizard(models.TransientModel):
                     'journal_id': self.payment_method.id
                 })
                 payment.action_create_payments()
+
+        action_id = self.env.ref("account.open_account_journal_dashboard_kanban")
+        res = action_id.read()[0]
+        res["target"] = "main"
+        return res

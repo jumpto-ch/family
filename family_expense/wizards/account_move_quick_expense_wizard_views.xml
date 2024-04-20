@@ -23,12 +23,9 @@
                         <field name="is_draft"/>
                         <field name="payment_method" attrs="{'invisible': [('is_draft', '=', True)]}"/>
                     </group>
-                </sheet>
-                <footer>
                     <button name="action_post" string="Add" class="oe_highlight"
                             type="object" data-hotkey="v"/>
-                    <button string="Cancel" class="btn-secondary" data-hotkey="w" special="cancel"/>
-                </footer>
+                </sheet>
             </form>
         </field>
     </record>
