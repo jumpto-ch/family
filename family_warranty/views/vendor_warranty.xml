@@ -1,0 +1,76 @@
+<odoo>
+    <record id="warranty_view_move_line_form" model="ir.ui.view">
+        <field name="name">account.move.line.warranty.form</field>
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account.view_move_line_form"/>
+        <field name="arch" type="xml">
+            <!--Only move visible from an invoice line will see the Warranty fields-->
+            <xpath expr="//page[@name='information']/group" position="inside">
+                <field name="exclude_from_invoice_tab" invisible="1"/>
+                <group string="Warranty" attrs="{'invisible': [('exclude_from_invoice_tab', '=', True)]}">
+                    <field name="has_vendor_warranty"/>
+                    <field name="vendor_warranty_limit" attrs="{'invisible': [('has_vendor_warranty', '=', False)]}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="warranty_view_move_form" model="ir.ui.view">
+        <field name="name">account.move.warranty.form</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <!--add Warranty in the invoice lines-->
+            <xpath expr="//page[@id='invoice_tab']/field[@name='invoice_line_ids']/tree" position="inside">
+                <field name="has_vendor_warranty"/>
+                <field name="vendor_warranty_limit" attrs="{'invisible': [('has_vendor_warranty', '=', False)]}"/>
+            </xpath>
+            <xpath expr="//page[@id='invoice_tab']/field[@name='invoice_line_ids']/form" position="inside">
+                <field name="has_vendor_warranty"/>
+                <field name="vendor_warranty_limit" attrs="{'invisible': [('has_vendor_warranty', '=', False)]}"/>
+            </xpath>
+
+            <!--invisible field to enable their edition-->
+            <xpath expr="//page[@id='aml_tab']/field[@name='line_ids']/tree" position="inside">
+                <field name="has_vendor_warranty" invisible="1"/>
+                <field name="vendor_warranty_limit" invisible="1"/>
+            </xpath>
+            <xpath expr="//page[@id='aml_tab']/field[@name='line_ids']/form" position="inside">
+                <field name="has_vendor_warranty" invisible="1"/>
+                <field name="vendor_warranty_limit" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="warranty_view_move_tree" model="ir.ui.view">
+        <field name="name">account.move.line.warranty.tree</field>
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account.view_move_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="inside">
+                <field name="vendor_warranty_limit" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="warranty_only_view_move_tree" model="ir.ui.view">
+        <field name="name">account.move.line.warranty.only.tree</field>
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account.view_move_line_tree"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <field name="ref" position="attributes">
+                <attribute name="optional">hide</attribute>
+            </field>
+            <field name="analytic_account_id" position="attributes">
+                <attribute name="optional">hide</attribute>
+            </field>
+            <field name="tax_ids" position="attributes">
+                <attribute name="optional">hide</attribute>
+            </field>
+            <field name="vendor_warranty_limit" position="attributes">
+                <attribute name="optional">show</attribute>
+            </field>
+        </field>
+    </record>
+</odoo>

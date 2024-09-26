@@ -1,0 +1,14 @@
+<odoo>
+    <record id="account_move_line_warranty_action" model="ir.actions.act_window">
+        <field name="name">Warranties</field>
+        <field name="res_model">account.move.line</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('has_vendor_warranty', '=', True)]</field>
+        <field name="view_id" ref="family_warranty.warranty_only_view_move_tree"/>
+    </record>
+    <menuitem
+            name="Warranties"
+            id="warranty_menu"
+            parent="account.menu_finance_payables"
+            action="account_move_line_warranty_action"/>
+</odoo>
