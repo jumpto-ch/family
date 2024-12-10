@@ -5,28 +5,29 @@
         <field name="arch" type="xml">
             <form string="Account Entry">
                 <sheet>
-                    <div class="oe_title">
-                        <h1>
-                            <span>New expense</span>
-                        </h1>
-                    </div>
                     <group>
-                        <field name="partner_id"
-                               context="{'show_address': 1, 'default_is_company': True, 'show_vat': True}"
-                               domain="[('type', '!=', 'private')]"
-                               options='{"always_reload": True, "no_quick_create": True}'/>
+                        <field name="partner_id"/>
                         <field name="account_id" options="{'no_create': True}"/>
-
                         <field name="price"/>
                         <field name="description"/>
                         <field name="invoice_date" widget="date"/>
                         <field name="is_draft"/>
-                        <field name="payment_method" attrs="{'invisible': [('is_draft', '=', True)]}"/>
+                        <field name="payment_method"/>
                     </group>
-                    <button name="action_post" string="Add" class="oe_highlight"
-                            type="object" data-hotkey="v"/>
+                    <footer>
+                        <button name="action_create_expense" string="Add" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
                 </sheet>
             </form>
         </field>
+    </record>
+
+    <record id="action_account_move_quick_expense_wizard" model="ir.actions.act_window">
+        <field name="name">Quick Expense Wizard</field>
+        <field name="res_model">account.move.quick.expense</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="account_move_quick_expense_wizard_form_view"/>
+        <field name="target">new</field>
     </record>
 </odoo>

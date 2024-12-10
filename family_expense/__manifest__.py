@@ -18,7 +18,7 @@
     # Check https://github.com/odoo/odoo/blob/13.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
     'category': 'Tools',
-    'version': '15.0.1.0.0',
+    'version': '17.0.1.0.0',
     'depends': ['account', 'mis_builder'],
 
     # always loaded
@@ -26,9 +26,6 @@
         'data/res_partner.xml',
         'security/ir.model.access.csv',
         'views/account_journal_views.xml',
-        'views/account_account_views.xml',
-        'views/mis_report_instance.xml',
         'wizards/account_move_quick_expense_wizard_views.xml',
-        'wizards/account_journal_in_out.xml'
     ],
 }
