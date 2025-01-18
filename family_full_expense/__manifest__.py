@@ -8,6 +8,7 @@
     """,
     'depends': [
         'contacts',
+        'base_automation',
         'family_expense',
         'account_statement_import_camt',  # https://github.com/OCA/bank-statement-import.git
         'account_reconcile_oca',  # https://github.com/OCA/account-reconcile.git
