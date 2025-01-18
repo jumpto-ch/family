@@ -7,9 +7,11 @@
         This module installs all the modules in the family directory.
     """,
     'depends': [
+        'contacts',
         'family_expense',
         'account_statement_import_camt',  # https://github.com/OCA/bank-statement-import.git
         'account_reconcile_oca',  # https://github.com/OCA/account-reconcile.git
+        'web_responsive',  # https://github.com/OCA/web.git
     ],
     'data': [],
     'installable': True,
