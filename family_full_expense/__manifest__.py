@@ -10,8 +10,9 @@
         'contacts',
         'base_automation',
         'family_expense',
-        'account_statement_import_camt',  # https://github.com/OCA/bank-statement-import.git
+        'account_cutoff_start_end_dates',  # https://github.com/OCA/account-closing.git
         'account_reconcile_oca',  # https://github.com/OCA/account-reconcile.git
+        'account_statement_import_camt',  # https://github.com/OCA/bank-statement-import.git
         'web_responsive',  # https://github.com/OCA/web.git
     ],
     'data': [],
