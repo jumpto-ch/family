@@ -25,3 +25,23 @@ class AccountJournal(models.Model):
             'target': 'new',
             'context': ctx,
         }
+
+    def action_cash_in_out(self):
+        """Special action on the dashboard view"""
+        ctx = self._context.copy()
+        ctx['default_journal_id'] = self.id
+        if self.type == 'sale':
+            ctx['default_move_type'] = 'out_refund' if ctx.get('refund') else 'out_invoice'
+        elif self.type == 'purchase':
+            ctx['default_move_type'] = 'in_refund' if ctx.get('refund') else 'in_invoice'
+        else:
+            ctx['default_move_type'] = 'entry'
+            ctx['view_no_maturity'] = True
+        return {
+            'name': _('New cash in/out'),
+            'type': 'ir.actions.act_window',
+            'view_mode': 'form',
+            'res_model': 'account.bank.statement.in.out',
+            'target': 'current',
+            'context': ctx,
+        }
