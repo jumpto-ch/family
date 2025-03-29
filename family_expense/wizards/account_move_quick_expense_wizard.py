@@ -16,11 +16,11 @@ class QuickExpenseWizard(models.TransientModel):
     payment_method = fields.Many2one('account.journal', string='Payment Method', required=True,
                                      domain=[('type', 'in', ('bank', 'cash'))])
 
-    @api.constrains('account_id')
-    def _check_account_balance(self):
-        for record in self:
-            if record.account_id.current_balance > 0:
-                raise UserError(_('The current balance of the selected account is below zero.'))
+#    @api.constrains('account_id')
+#    def _check_account_balance(self):
+#        for record in self:
+#            if record.account_id.current_balance > 0:
+#                raise UserError(_('The current balance of the selected account is below zero.'))
 
     def action_create_expense(self):
         partner_id = self.partner_id if self.partner_id else self.env.ref('family_expense.undefined_res_partner')
