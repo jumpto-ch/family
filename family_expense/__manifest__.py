@@ -26,6 +26,7 @@
         'data/res_partner.xml',
         'security/ir.model.access.csv',
         'views/account_journal_views.xml',
+        'views/res_partner_views.xml',
         'wizards/account_move_quick_expense_wizard_views.xml',
     ],
 }

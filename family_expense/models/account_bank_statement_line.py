@@ -1,32 +1,40 @@
-# Copyright 2023 Dixmit
-# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 import re
 
 from odoo import models
-from odoo.osv.expression import get_unaccent_wrapper
-from odoo.tools import html2plaintext
-
-from odoo.addons.base.models.res_bank import sanitize_account_number
 
 
 class AccountBankStatementLine(models.Model):
     _inherit = ("account.bank.statement.line",)
 
     def create(self, vals):
+        # si vals n'est pas une liste transformer en liste
+        vals = [vals] if not isinstance(vals, list) else vals
         new_vals = []
         for val in vals:
-            if 'partner_id' not in val.keys() and 'partner_name' not in val.keys():
-                for company in self.env['res.partner'].search([('is_company', '=', 'true')]):
-                    if company.name and company.name.lower() in val['narration'].lower():
-                        val['partner_id'] = company.id
-                        break
-
             if 'payment_ref' not in val.keys() or val['payment_ref'] == '/':
 
                 if 'Additional Entry Information (AddtlNtryInf):' in val['narration']:
                     match = re.search(r'Additional Entry Information \(AddtlNtryInf\):([^\n]*)', val['narration'])
                     if match:
                         val['payment_ref'] = match.group(1).strip()
+
+            if 'partner_name' in val.keys() and 'partner_id' not in val.keys():
+                for partner in self.env['res.partner'].search([]):
+                    statement_name = partner.statement_name.lower() if partner.statement_name else partner.name
+                    state_line_ref = val['partner_name'].lower()
+
+                    if statement_name in state_line_ref:
+                        val['partner_id'] = partner.id
+                        break
+
+            if 'partner_id' not in val.keys() and 'partner_name' not in val.keys():
+                for partner in self.env['res.partner'].search([]):
+                    state_line_ref = val['payment_ref'].lower()
+                    statement_name = partner.statement_name.lower() if partner.statement_name else partner.name
+
+                    if statement_name in state_line_ref:
+                        val['partner_id'] = partner.id
+                        break
 
             new_vals.append(val)
 
