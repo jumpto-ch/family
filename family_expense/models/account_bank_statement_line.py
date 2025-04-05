@@ -32,7 +32,7 @@ class AccountBankStatementLine(models.Model):
                     state_line_ref = val['payment_ref'].lower()
                     statement_name = partner.statement_name.lower() if partner.statement_name else partner.name
 
-                    if statement_name in state_line_ref:
+                    if isinstance(statement_name, str) and statement_name in state_line_ref:
                         val['partner_id'] = partner.id
                         break
 
