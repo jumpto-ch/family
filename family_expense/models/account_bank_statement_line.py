@@ -33,6 +33,7 @@ class AccountBankStatementLine(models.Model):
 
             if 'partner_id' not in val.keys() and 'partner_name' not in val.keys():
                 for partner in self.env['res.partner'].search([]):
+                    _logger.warning("partner_name: %s", partner.id)
                     state_line_ref = val['payment_ref'].lower()
                     statement_name = partner.statement_name.lower() if partner.statement_name else partner.name.lower()
 
