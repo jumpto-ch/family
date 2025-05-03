@@ -15,7 +15,7 @@ class AccountBankStatementLine(models.Model):
         for val in vals:
             if 'payment_ref' not in val.keys() or val['payment_ref'] == '/':
 
-                if 'Additional Entry Information (AddtlNtryInf):' in val['narration']:
+                if 'narration' in val.keys() and 'Additional Entry Information (AddtlNtryInf):' in val['narration']:
                     match = re.search(r'Additional Entry Information \(AddtlNtryInf\):([^\n]*)', val['narration'])
                     if match:
                         val['payment_ref'] = match.group(1).strip()
