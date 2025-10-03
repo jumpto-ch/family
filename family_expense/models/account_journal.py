@@ -8,6 +8,7 @@ class AccountJournal(models.Model):
     _inherit = "account.journal"
 
     make_quick_payment = fields.Boolean(string="Automatic payment", help="""Make automatic payment on quick expense""")
+    make_quick_transaction = fields.Boolean(string="Automatic transaction", help="""Show the Cash in/out button on the dashboard""")
 
     def action_create_new_entry(self):
         """Special action on the dashboard view"""
@@ -41,7 +42,14 @@ class AccountJournal(models.Model):
             'name': _('New cash in/out'),
             'type': 'ir.actions.act_window',
             'view_mode': 'form',
-            'res_model': 'account.bank.statement.in.out',
-            'target': 'current',
+            'res_model': 'account.move.quick.expense',
+            'target': 'new',
             'context': ctx,
         }
+        
+    def _get_journal_dashboard_data_batched(self):
+        """ Override to add quick expense parameter """
+        res = super()._get_journal_dashboard_data_batched()
+        for journal in self:
+            res[journal.id]['make_quick_transaction'] = journal.make_quick_transaction
+        return res

@@ -24,7 +24,9 @@ class QuickExpenseWizard(models.TransientModel):
 
     def action_create_expense(self):
         partner_id = self.partner_id if self.partner_id else self.env.ref('family_expense.undefined_res_partner')
+        
         price = float(self.price)
+            
         moves = self.env['account.move'].create({
             'move_type': self.env.context.get('default_move_type'),
             'journal_id': self.env.context.get('default_journal_id'),
