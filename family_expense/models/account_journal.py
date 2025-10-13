@@ -9,6 +9,10 @@ class AccountJournal(models.Model):
 
     make_quick_payment = fields.Boolean(string="Automatic payment", help="""Make automatic payment on quick expense""")
     make_quick_transaction = fields.Boolean(string="Automatic transaction", help="""Show the Cash in/out button on the dashboard""")
+    quick_transaction_account_domain = fields.Char(
+        string="Domain",
+        help="The domain to filter the accounts that can be used for quick cash in/out entries. "
+    )
 
     def action_create_new_entry(self):
         """Special action on the dashboard view"""
@@ -42,7 +46,7 @@ class AccountJournal(models.Model):
             'name': _('New cash in/out'),
             'type': 'ir.actions.act_window',
             'view_mode': 'form',
-            'res_model': 'account.move.quick.expense',
+            'res_model': 'account.journal.cash.in.out',
             'target': 'new',
             'context': ctx,
         }

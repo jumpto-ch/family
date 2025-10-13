@@ -19,7 +19,7 @@
     # for the full list
     'category': 'Tools',
     'version': '17.0.1.0.0',
-    'depends': ['account', 'mis_builder'],
+    'depends': ['account', 'mis_builder', 'account_statement_import_camt','account_reconcile_model_oca'],
 
     # always loaded
     'data': [
@@ -28,5 +28,6 @@
         'views/account_journal_views.xml',
         'views/res_partner_views.xml',
         'wizards/account_move_quick_expense_wizard_views.xml',
+        'wizards/account_journal_cash_in_out_wizard_views.xml',
     ],
 }
