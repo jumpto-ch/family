@@ -19,7 +19,7 @@
     # for the full list
     'category': 'Tools',
     'version': '17.0.1.0.0',
-    'depends': ['account', 'mis_builder', 'account_statement_import_camt','account_reconcile_model_oca'],
+    'depends': ['account', 'mis_builder', 'account_statement_import_camt','account_reconcile_model_oca','account_reconcile_oca'],
 
     # always loaded
     'data': [

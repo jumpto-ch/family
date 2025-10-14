@@ -6,9 +6,10 @@
             <form string="Account Entry">
                 <sheet>
                     <group>
-                        <field name="amount"/>
+                        <field name="amount" required="1"/>
                         <field name="account_id" options="{'no_create': True}"/>
-                        <field name="description"/>
+                        <field name="partner_id" options="{'no_create': True}"/>
+                        <field name="description" required="1"/>
                         <field name="date" widget="date"/>
                     </group>
                     <footer>

@@ -15,7 +15,7 @@
                         <field name="payment_method"/>
                     </group>
                     <footer>
-                        <button name="action_create_expense" string="Create" type="object" class="btn-primary" context="{'direction': 'in'}"/>
+                        <button name="action_create_expense" string="New expense" type="object" class="btn-primary"/>
                         <button string="Cancel" class="btn-secondary" special="cancel"/>
                     </footer>
                 </sheet>

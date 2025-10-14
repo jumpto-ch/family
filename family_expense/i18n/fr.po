@@ -31,6 +31,7 @@ msgid "<span>Quick expense</span>"
 msgstr "<span>Dépense rapide<span>"
 
 #. module: family_expense
+#: model:ir.model.fields,field_description:family_expense.field_account_journal_cash_in_out__account_id
 #: model:ir.model.fields,field_description:family_expense.field_account_move_quick_expense__account_id
 msgid "Account"
 msgstr "Compte"
@@ -51,6 +52,7 @@ msgid "Automatic payment"
 msgstr "Paiement automatique"
 
 #. module: family_expense
+#: model_terms:ir.ui.view,arch_db:family_expense.account_journal_cash_in_out_wizard_form_view
 #: model_terms:ir.ui.view,arch_db:family_expense.account_move_quick_expense_wizard_form_view
 msgid "Cancel"
 msgstr "Annuler"
@@ -151,3 +153,78 @@ msgstr "Le prix n'est pas correct"
 #: model:ir.model.fields,field_description:family_expense.field_account_move_quick_expense__partner_id
 msgid "Vendor"
 msgstr "Fournisseur"
+
+#. module: family_expense
+#: model:ir.model.fields,field_description:family_expense.field_account_journal_cash_in_out__amount
+msgid "Amount"
+msgstr "Montant"
+
+#. module: family_expense
+#: model:ir.model.fields,field_description:family_expense.field_account_journal__make_quick_transaction
+msgid "Automatic transaction"
+msgstr "Transaction automatique"
+
+#. module: family_expense
+#: model:ir.model.fields,field_description:family_expense.field_account_journal_cash_in_out__date
+#: model:ir.model.fields,field_description:family_expense.field_account_move_quick_expense__invoice_date
+msgid "Date"
+msgstr "Date"
+
+#. module: family_expense
+#: model:ir.model.fields,field_description:family_expense.field_account_journal_cash_in_out__description
+#: model:ir.model.fields,field_description:family_expense.field_account_move_quick_expense__description
+msgid "Description"
+msgstr "Description"
+
+#. module: family_expense
+#: model:ir.model.fields,field_description:family_expense.field_account_journal__quick_transaction_account_domain
+msgid "Domain"
+msgstr "Domaine"
+
+#. module: family_expense
+#: model_terms:ir.ui.view,arch_db:family_expense.account_journal_cash_in_out_wizard_form_view
+msgid "In"
+msgstr "Entrée"
+
+#. module: family_expense
+#: model:ir.model,name:family_expense.model_account_journal_cash_in_out
+msgid "Make an automatic cash in or out entry"
+msgstr "Fait une transaction automatique"
+
+#. module: family_expense
+#: model_terms:ir.ui.view,arch_db:family_expense.account_journal_cash_in_out_wizard_form_view
+msgid "Out"
+msgstr "Sortie"
+
+#. module: family_expense
+#: model:ir.model.fields,field_description:family_expense.field_account_journal_cash_in_out__partner_id
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: family_expense
+#: model:ir.model.fields,help:family_expense.field_account_journal__make_quick_transaction
+msgid "Show the Cash in/out button on the dashboard"
+msgstr "Ajoute le bouton Cash In/out sur le tableau de bord"
+
+#. module: family_expense
+#: model:ir.model.fields,help:family_expense.field_account_journal__quick_transaction_account_domain
+msgid ""
+"The domain to filter the accounts that can be used for quick cash in/out "
+"entries. "
+msgstr "Le domaine pour filtrer les comptes affichés dans le formulaire"
+
+#. module: family_expense
+#: model_terms:ir.ui.view,arch_db:family_expense.account_journal_dashboard_quick_expense_kanban_view
+msgid "Cash in/out"
+msgstr "Entrée/Sortie"
+
+#. module: family_expense
+#: model_terms:ir.ui.view,arch_db:family_expense.view_account_journal_form
+msgid "Quick transaction"
+msgstr "Transaction rapide"
+
+#. module: family_expense
+#: code:addons/family_expense/wizards/account_journal_cash_in_out_wizard.py:0
+#, python-format
+msgid "The amount must be positive."
+msgstr "Le montant doit être positif."
