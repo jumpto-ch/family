@@ -46,8 +46,8 @@ class AccountJournal(models.Model):
             'name': _('New cash in/out'),
             'type': 'ir.actions.act_window',
             'view_mode': 'form',
-            'res_model': 'account.journal.cash.in.out',
-            'target': 'new',
+            'res_model': 'account.bank.statement.in.out',
+            'target': 'current',
             'context': ctx,
         }
         
