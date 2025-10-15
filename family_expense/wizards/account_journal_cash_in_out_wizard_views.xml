@@ -1,0 +1,32 @@
+<odoo>
+    <record id="account_journal_cash_in_out_wizard_form_view" model="ir.ui.view">
+        <field name="name">account.journal.cash.in.out.wizard.form</field>
+        <field name="model">account.journal.cash.in.out</field>
+        <field name="arch" type="xml">
+            <form string="Account Entry">
+                <sheet>
+                    <group>
+                        <field name="amount" required="1"/>
+                        <field name="account_id" options="{'no_create': True}"/>
+                        <field name="partner_id" options="{'no_create': True}"/>
+                        <field name="description" required="1"/>
+                        <field name="date" widget="date"/>
+                    </group>
+                    <footer>
+                        <button name="action_cash" string="In" type="object" class="btn-primary" context="{'direction': 'in'}"/>
+                        <button name="action_cash" string="Out" type="object" class="btn-primary" context="{'direction': 'out'}"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_account_journal_cash_in_out_wizard" model="ir.actions.act_window">
+        <field name="name">Cash In/Out Wizard</field>
+        <field name="res_model">account.journal.cash.in.out</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="account_journal_cash_in_out_wizard_form_view"/>
+        <field name="target">new</field>
+    </record>
+</odoo>
