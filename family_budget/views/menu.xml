@@ -1,0 +1,11 @@
+<odoo>
+    <menuitem id="menu_familly_budget_root"
+              name="Budget"
+              parent="account.menu_finance"
+              sequence="70"/>
+
+    <menuitem id="menu_familly_budget"
+              name="Budgets"
+              parent="account.menu_finance"
+              action="action_familly_budget" sequence="2"/>
+</odoo>

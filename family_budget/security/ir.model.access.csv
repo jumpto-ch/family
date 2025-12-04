@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_familly_budget_full_access,familly.budget,model_familly_budget,account.group_account_user,1,1,1,1
+access_familly_budget_line_full_access,familly.budget.line,model_familly_budget_line,account.group_account_user,1,1,1,1

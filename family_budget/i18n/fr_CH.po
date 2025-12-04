@@ -1,0 +1,304 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* family_budget
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-04 10:51+0000\n"
+"PO-Revision-Date: 2025-12-04 10:51+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: family_budget
+#: model_terms:ir.ui.view,arch_db:family_budget.view_familly_budget_form
+msgid ""
+"<i class=\"fa fa-long-arrow-right mx-2\" aria-label=\"Arrow icon\" "
+"title=\"Arrow\"/>"
+msgstr ""
+"<i class=\"fa fa-long-arrow-right mx-2\" aria-label=\"Icône flèche\" title=\"Flèche\"/>"
+
+#. module: family_budget
+#: model_terms:ir.ui.view,arch_db:family_budget.view_familly_budget_form
+msgid ""
+"<span class=\"o_form_label\">⚠ Budget not balanced! incomes must equal "
+"expenses.</span>"
+msgstr ""
+"<span class=\"o_form_label\">⚠ Budget non équilibré ! Les revenus doivent être égaux aux charges.</span>"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_familly_budget_line__account_id
+msgid "Account"
+msgstr "Compte"
+
+#. module: family_budget
+#: model:ir.model.fields.selection,name:family_budget.selection__familly_budget__state__active
+msgid "Active"
+msgstr "Actif"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_familly_budget_line__amount
+#: model_terms:ir.ui.view,arch_db:family_budget.view_familly_budget_form
+msgid "Amount"
+msgstr "Montant"
+
+#. module: family_budget
+#: model:ir.model.fields.selection,name:family_budget.selection__familly_budget__state__archived
+msgid "Archived"
+msgstr "Archivé"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_familly_budget__message_attachment_count
+msgid "Attachment Count"
+msgstr "Nombre de pièces jointes"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_familly_budget__balanced
+msgid "Balanced"
+msgstr "Équilibré"
+
+#. module: family_budget
+#: model:account.journal,name:family_budget.journal_budget
+#: model:ir.model.fields,field_description:family_budget.field_familly_budget_line__budget_id
+#: model:ir.ui.menu,name:family_budget.menu_familly_budget_root
+msgid "Budget"
+msgstr "Budget"
+
+#. module: family_budget
+#. odoo-python
+#: code:addons/family_budget/models/family_budget.py:0
+#, python-format
+msgid "Budget %s - %s"
+msgstr "Budget %s - %s"
+
+#. module: family_budget
+#: model:ir.model,name:family_budget.model_familly_budget
+msgid "Budget Familial"
+msgstr "Budget Familial"
+
+#. module: family_budget
+#: model:ir.model,name:family_budget.model_familly_budget_line
+msgid "Budget Line"
+msgstr "Ligne de budget"
+
+#. module: family_budget
+#. odoo-python
+#: code:addons/family_budget/models/family_budget.py:0
+#, python-format
+msgid "Budget not balanced! Revenue must equal expenses."
+msgstr "Budget non équilibré ! Les revenus doivent être égaux aux charges."
+
+#. module: family_budget
+#: model_terms:ir.ui.view,arch_db:family_budget.view_familly_budget_form
+msgid "Budget's Name"
+msgstr "Nom du budget"
+
+#. module: family_budget
+#: model:ir.actions.act_window,name:family_budget.action_familly_budget
+#: model:ir.ui.menu,name:family_budget.menu_familly_budget
+msgid "Budgets"
+msgstr "Budgets"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_familly_budget__company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_familly_budget_line__currency_id
+msgid "Company Currency"
+msgstr "Devise de la société"
+
+#. module: family_budget
+#: model_terms:ir.ui.view,arch_db:family_budget.view_familly_budget_form
+msgid "Confirm"
+msgstr "Confirmer"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_familly_budget__create_uid
+#: model:ir.model.fields,field_description:family_budget.field_familly_budget_line__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_familly_budget__create_date
+#: model:ir.model.fields,field_description:family_budget.field_familly_budget_line__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_familly_budget__currency_id
+msgid "Currency"
+msgstr "Devise"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_familly_budget__date_end
+msgid "Date End"
+msgstr "Date de fin"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_familly_budget__date_start
+msgid "Date Start"
+msgstr "Date de début"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_familly_budget__display_name
+#: model:ir.model.fields,field_description:family_budget.field_familly_budget_line__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: family_budget
+#: model:ir.model.fields.selection,name:family_budget.selection__familly_budget__state__draft
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: family_budget
+#: model:ir.model.fields.selection,name:family_budget.selection__familly_budget_line__type__expense
+msgid "Expense"
+msgstr "Charge"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_familly_budget__expense_line_ids
+msgid "Expense Line"
+msgstr "Ligne de charge"
+
+#. module: family_budget
+#: model_terms:ir.ui.view,arch_db:family_budget.view_familly_budget_form
+msgid "Expenses"
+msgstr "Charges"
+
+#. module: family_budget
+#: model:ir.actions.server,name:family_budget.ir_cron_generate_budget_moves_ir_actions_server
+msgid "Familly Budget - Générer les opérations"
+msgstr "Budget Familial - Générer les opérations"
+
+#. module: family_budget
+#: model:ir.model.fields,help:family_budget.field_familly_budget__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icône Font Awesome, par ex. : fa-tasks"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_familly_budget__frequency
+msgid "Frequency"
+msgstr "Fréquence"
+
+#. module: family_budget
+#: model_terms:ir.ui.view,arch_db:family_budget.view_familly_budget_form
+msgid "From"
+msgstr "De"
+
+#. module: family_budget
+#: model:ir.model.fields.selection,name:family_budget.selection__familly_budget_line__type__income
+msgid "Income"
+msgstr "Revenu"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_familly_budget__income_line_ids
+msgid "Income Line"
+msgstr "Ligne de revenu"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_familly_budget_line__name
+msgid "Label"
+msgstr "Libellé"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_familly_budget__message_ids
+msgid "Messages"
+msgstr "Messages"
+
+#. module: family_budget
+#: model:ir.model.fields.selection,name:family_budget.selection__familly_budget__frequency__month
+msgid "Monthly"
+msgstr "Mensuel"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_familly_budget_line__sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_familly_budget__state
+msgid "State"
+msgstr "État"
+
+#. module: family_budget
+#. odoo-python
+#: code:addons/family_budget/models/family_budget.py:0
+#, python-format
+msgid ""
+"There is already an active budget for this company: '%s'. You must archive "
+"it before activating a new one."
+msgstr ""
+"Il existe déjà un budget actif pour cette société : « %s ». "
+"Vous devez l’archiver avant d’en activer un nouveau."
+
+#. module: family_budget
+#: model_terms:ir.ui.view,arch_db:family_budget.view_familly_budget_form
+msgid "To"
+msgstr "À"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_familly_budget__total_expenses
+msgid "Total Expenses"
+msgstr "Total des charges"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_familly_budget__total_incomes
+msgid "Total Incomes"
+msgstr "Total des revenus"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_familly_budget_line__type
+msgid "Type"
+msgstr "Type"
+
+#. module: family_budget
+#: model:ir.model.fields,help:family_budget.field_familly_budget__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Type d’activité en exception sur l’enregistrement."
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_familly_budget__version
+msgid "Version"
+msgstr "Version"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_familly_budget__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_familly_budget__next_execution_date
+msgid "Next Execution Date"
+msgstr "Prochaine date d'exécution"
+
+#. module: family_budget
+#: model_terms:ir.ui.view,arch_db:family_budget.view_familly_budget_form
+msgid "Period"
+msgstr "Période"
+
+#. module: family_budget
+#: model:ir.model.fields.selection,name:family_budget.selection__familly_budget__frequency__week
+msgid "Weekly"
+msgstr "Hebdomadaire"
+
+#. module: family_budget
+#: model:ir.model.fields.selection,name:family_budget.selection__familly_budget__frequency__year
+msgid "Yearly"
+msgstr "Annuel"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_familly_budget_line__company_id
+msgid "company"
+msgstr "Société"
+
+#. module: family_budget
+#: model_terms:ir.ui.view,arch_db:family_budget.view_familly_budget_form
+msgid "incomes"
+msgstr "revenus"

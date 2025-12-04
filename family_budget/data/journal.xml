@@ -1,0 +1,12 @@
+<odoo>
+    <data noupdate="1">
+            <record id="journal_budget" model="account.journal">
+                <field name="name">Budget</field>
+                <field name="code">BDGT</field>
+                <field name="type">general</field>
+                <field name="reconcile_mode">edit</field>
+                <field name="sequence">100</field>
+                <field name="alias_name">budget_family</field>
+            </record>
+    </data>
+</odoo>
