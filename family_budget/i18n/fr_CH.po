@@ -302,3 +302,14 @@ msgstr "Société"
 #: model_terms:ir.ui.view,arch_db:family_budget.view_familly_budget_form
 msgid "incomes"
 msgstr "revenus"
+
+#. module: family_budget
+#: model_terms:ir.ui.view,arch_db:family_budget.familly_budget_search_view
+msgid "Archived"
+msgstr "Archivé"
+
+#. module: family_budget
+#: model_terms:ir.ui.view,arch_db:family_budget.view_familly_budget_form
+msgid "Not balanced"
+msgstr "Pas équilibré"
+

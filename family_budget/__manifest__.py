@@ -13,7 +13,7 @@ This module allows you to:
 - Automatically generate journal entries based on a schedule
 
 States:
-Draft -> Active -> Archived
+Draft -> Active 
 
 Features:
 - Only one active budget allowed at a time

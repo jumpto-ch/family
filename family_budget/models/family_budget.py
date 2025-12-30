@@ -78,9 +78,6 @@ class FamillyBudget(models.Model):
 
             budget.state = "active"
 
-    def action_archive(self):
-        self.write({"state": "archived"})
-
     def action_set_draft(self):
         self.write({"state": "draft"})
 
