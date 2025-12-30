@@ -14,12 +14,13 @@
             <tree>
                 <field name="name"/>
                 <field name="version"/>
+                <field name="currency_id" column_invisible="True"/>
                 <field name="date_start"/>
                 <field name="date_end"/>
                 <field name="frequency"/>
-                <field name="total_incomes"/>
-                <field name="total_expenses"/>
-                <field name="state"/>
+                <field name="total_incomes" sum="Total Revenues" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                <field name="total_expenses" sum="Total Expenses" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                <field name="state" widget="badge" decoration-success="state =='active'"/>
             </tree>
         </field>
     </record>
@@ -40,6 +41,7 @@
                     <field name="state" widget="statusbar"/>
                 </header>
                 <sheet>
+                    <widget name="web_ribbon" title="Not balanced" bg_color="text-bg-danger" invisible="balanced"/>
                     <div class="oe_title">
                         <h1>
                             <field name="name" placeholder="Budget's Name" required="True"/>
@@ -118,4 +120,19 @@
             </form>
         </field>
     </record>
+
+    <record id="familly_budget_search_view" model="ir.ui.view">
+        <field name="name">familly.budget.search</field>
+        <field name="model">familly.budget</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter
+                        string="Archived"
+                        name="archived"
+                        domain="[('active','=',False)]"/>
+
+            </search>
+        </field>
+    </record>
+
 </odoo>

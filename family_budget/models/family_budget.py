@@ -22,17 +22,16 @@ class FamillyBudget(models.Model):
     state = fields.Selection([
         ('draft', 'Draft'),
         ('active', 'Active'),
-        ('archived', 'Archived')
     ], default='draft')
-
+    active = fields.Boolean('Active', default=True)
     next_execution_date = fields.Date(
         string="Next Execution Date",
         help="Date on which the next budget entry should be generated.",
     )
 
-    income_line_ids = fields.One2many('familly.budget.line', 'budget_id',
+    income_line_ids = fields.One2many('familly.budget.line', 'budget_id', copy=True,
                                        domain=[('type', '=', 'income')], context={'default_type': 'income'})
-    expense_line_ids = fields.One2many('familly.budget.line', 'budget_id',
+    expense_line_ids = fields.One2many('familly.budget.line', 'budget_id', copy=True,
                                       domain=[('type', '=', 'expense')], context={'default_type': 'expense'})
 
     total_incomes = fields.Monetary(compute="_compute_totals")
